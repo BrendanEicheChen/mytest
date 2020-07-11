@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./myPromise.js"></script>
+</head>
+
+<body>
+  <h1>自己封装的promise</h1>
+</body>
+<script>
+  let p1 = new KPromise((resolve, reject) => {
+    //resolve(1111);
+    reject(111);
+  })
+  p1.then(
+    (res) => { console.log(res) },
+    (err) => { console.log(err) }
+  ).then(
+    (res) => { console.log(2222) },
+    (err) => { console.log(err) }
+  ).then(
+    (res) => { console.log(3333) },
+    (err) => { console.log(err) }
+  )
+    .finally(() => {
+      console.log("执行了finally");
+    })
+
+
+</script>
+
+</html>
